@@ -3,7 +3,7 @@
 
 Name:           %{?scl_prefix}yaml-cpp
 Version:        0.5.1
-Release:        9%{?dist}
+Release:        10%{?dist}
 Summary:        A YAML parser and emitter for C++
 Group:          Development/Libraries
 License:        MIT 
@@ -69,9 +69,12 @@ make VERBOSE=1 %{?_smp_mflags}
 %files devel
 %{_includedir}/yaml-cpp/
 %{_libdir}/*.so
-%{_libdir}/pkgconfig/*.pc
+%{_libdir}/pkgconfig/
 
 %changelog
+* Thu Feb 11 2016 Marek Skalicky <mskalick@redhat.com> - 0.5.1-10
+- Fixed pkgconfig directory ownership
+
 * Thu Jan 22 2015 Marek Skalicky <mskalick@redhat.com> - 0.5.1-9
 - Fixed devel requires (system boost libraries)
 
