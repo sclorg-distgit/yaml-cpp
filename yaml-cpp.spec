@@ -3,7 +3,7 @@
 
 Name:           %{?scl_prefix}yaml-cpp
 Version:        0.5.1
-Release:        9%{?dist}
+Release:        10%{?dist}
 Summary:        A YAML parser and emitter for C++
 Group:          Development/Libraries
 License:        MIT 
@@ -12,11 +12,7 @@ Source0:        http://yaml-cpp.googlecode.com/files/%{pkg_name}-%{version}.tar.
 Patch0:         yaml-cpp-majorversion.patch
 
 BuildRequires:  cmake
-%if 0%{?fedora} >= 15 || 0%{?rhel} >= 7
-BuildRequires:  boost-devel
-%else
 BuildRequires:  %{?scl_prefix}boost-devel
-%endif
 
 %{?scl:Requires:%scl_runtime}
 
@@ -29,11 +25,7 @@ Group:          Development/Libraries
 License:        MIT
 Requires:       %{name}%{?_isa} = %{version}-%{release}
 Requires:       pkgconfig
-%if 0%{?fedora} >= 15 || 0%{?rhel} >= 7
-Requires:       boost-devel
-%else
 Requires:       %{?scl_prefix}boost-devel
-%endif
 
 %description    devel
 The %{pkg_name}-devel package contains libraries and header files for
@@ -72,6 +64,9 @@ make VERBOSE=1 %{?_smp_mflags}
 %{_libdir}/pkgconfig/*.pc
 
 %changelog
+* Fri Jan 8 2016 Marek Skalicky <mskalick@redhat.com> - 0.5.1-10
+- Fixed rh-mongodb32 buildrequires boost library from collection
+
 * Thu Jan 22 2015 Marek Skalicky <mskalick@redhat.com> - 0.5.1-9
 - Fixed devel requires (system boost libraries)
 
