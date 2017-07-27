@@ -1,0 +1,12 @@
+diff -up CMakeLists.txt.majorversion CMakeLists.txt
+--- ./CMakeLists.txt.majorversion	2015-01-18 10:35:33.269980251 +0100
++++ ./CMakeLists.txt	2015-01-18 10:35:44.985957750 +0100
+@@ -21,7 +21,7 @@ include(CheckCXXCompilerFlag)
+ ###
+ project(YAML_CPP)
+ 
+-set(YAML_CPP_VERSION_MAJOR "0")
++set(YAML_CPP_VERSION_MAJOR "${VERSION_MAJOR_PREFIX}0")
+ set(YAML_CPP_VERSION_MINOR "5")
+ set(YAML_CPP_VERSION_PATCH "3")
+ set(YAML_CPP_VERSION "${YAML_CPP_VERSION_MAJOR}.${YAML_CPP_VERSION_MINOR}.${YAML_CPP_VERSION_PATCH}")
