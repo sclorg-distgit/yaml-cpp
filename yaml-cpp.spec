@@ -3,7 +3,7 @@
 
 Name:           %{?scl_prefix}yaml-cpp
 Version:        0.5.3
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        A YAML parser and emitter for C++
 Group:          Development/Libraries
 License:        MIT
@@ -60,9 +60,13 @@ make VERBOSE=1 %{?_smp_mflags}
 %files devel
 %{_includedir}/yaml-cpp/
 %{_libdir}/*.so
-%{_libdir}/pkgconfig
+%{_libdir}/pkgconfig/*.pc
 
 %changelog
+* Tue Aug 22 2017 Marek Skalický <mskalick@redhat.com> - 0.5.3-2
+- pkgconfig directory should be owned by -runtime
+  Resolves: RHBZ#1483924
+
 * Tue Jun 6 2017 Marek Skalicky <mskalick@redhat.com> - 0.5.3-1
 - Rebased to latest version from Fedora 27
 
